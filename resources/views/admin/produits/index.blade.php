@@ -11,25 +11,32 @@
     <table class="w-full text-center mt-4 h-10 overflow-y-auto">
         <thead>
             <tr>
-                <th class="bg-gray-200 py-2 rounded-tl-2xl">Nom</th>
-                <th class="bg-gray-200 py-2">Prenom</th>
-                <th class="bg-gray-200 py-2">Adresse</th>
-                <th class="bg-gray-200 py-2">Ville</th>
-                <th class="bg-gray-200 py-2 w-[50px]">Email</th>
-                <th class="bg-gray-200 py-2">Telephone</th>
-                <th class="bg-gray-200 py-2">Admin</th>
+                <th class="bg-gray-200 py-2 rounded-tl-2xl">codebarre</th>
+                <th class="bg-gray-200 py-2">designation</th>
+                <th class="bg-gray-200 py-2">prix_ht</th>
+                <th class="bg-gray-200 py-2">tva</th>
+                <th class="bg-gray-200 py-2 w-[50px]">description</th>
+                <th class="bg-gray-200 py-2">image</th>
+                <th class="bg-gray-200 py-2">sous_famille</th>
+                <th class="bg-gray-200 py-2">marque</th>
+                <th class="bg-gray-200 py-2">unite</th>
+                <th class="bg-gray-200 py-2">stock</th>
                 <th class="bg-gray-200 py-2 rounded-tr-2xl">Action</th>
             </tr>
         </thead>
         <tbody class="bg-gray-100">
             @forelse($produits as $produit)
             <tr class="hover:bg-slate-200">
-                <td class="py-4">{{ $produit->nom }}</td>
-                <td class="py-4">{{ $produit->prenom }}</td>
-                <td class="py-4">{{ $produit->adresse }}</td>
-                <td class="py-4">{{ $produit->ville }}</td>
-                <td class="py-4 w-[50px] overflow-x-auto whitespace-nowrap">{{ $produit->email }}</td>
-                <td class="py-4">{{ $produit->tel }}</td>
+                <td class="py-4">{{ $produit->codebarre }}</td>
+                <td class="py-4">{{ $produit->designation }}</td>
+                <td class="py-4">{{ $produit->prix_ht }}</td>
+                <td class="py-4">{{ $produit->tva }}</td>
+                <td class="py-4 w-[50px] overflow-x-auto whitespace-nowrap">{{ $produit->description }}</td>
+                <td class="py-4">{{ $produit->image }}</td>
+                <td class="py-4">{{ $produit->sous_famille_id }}</td>
+                <td class="py-4">{{ $produit->marque_id }}</td>
+                <td class="py-4">{{ $produit->unite['unite'] }}</td>
+                <td class="py-4">{{ $produit->stock }}</td>
                 <td class="py-4 px-2">
                     <form action="{{route('produits.destroy',$produit)}}" method="post" class="flex gap-2 items-center justify-center">
                         @csrf
