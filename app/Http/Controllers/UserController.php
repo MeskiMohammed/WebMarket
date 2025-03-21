@@ -37,7 +37,7 @@ class UserController extends Controller
             'ville' => 'required|string',
             'adresse' => 'required|string',
         ]);
-    
+
         $validated['password'] = bcrypt($validated['password']);
         User::create($validated);
         return redirect()->back();
@@ -78,7 +78,7 @@ class UserController extends Controller
 
     public function toggleAdmin(User $user)
     {
-        $user->isAdmin = !$user->isAdmin;
+        $user->admin = !$user->admin;
         $user->save();
         return redirect()->back();
     }

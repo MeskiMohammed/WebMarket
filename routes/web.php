@@ -17,7 +17,7 @@ use App\Http\Controllers\UniteController;
 use App\Http\Controllers\ModeReglementController;
 use App\Http\Controllers\EtatController;
 
-Route::get('/',fn () => view('client.Layout.app'));
+
 Route::get('/admin',fn () => view('admin.Layout.app'));
 #Route::get('/login',fn () => view('login'));
 #Route::get('/register',fn () => view('register'));
@@ -49,6 +49,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/',fn () => view('client.Layout.app'));
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

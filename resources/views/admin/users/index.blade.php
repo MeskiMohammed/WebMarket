@@ -32,7 +32,7 @@
                 <td class="py-4">{{ $user->tel }}</td>
                 <td class="py-4">
                     <form action="{{route('users.toggleAdmin',$user)}}" method="get">
-                        <input type="submit" name="isAdmin" value="{{ $user->isAdmin?'oui': 'non' }}" class="bg-{{$user->isAdmin?'green': 'red'}}-600 hover:bg-{{$user->isAdmin?'green': 'red'}}-500 cursor-pointer text-white font-bold px-4 pb-2 pt-1 hover:scale-90 transition-all duration-200 rounded-3xl text-center">
+                        <input type="submit" name="admin" value="{{ $user->admin?'oui': 'non' }}" class="bg-{{$user->admin?'green': 'red'}}-600 hover:bg-{{$user->admin?'green': 'red'}}-500 cursor-pointer text-white font-bold px-4 pb-2 pt-1 hover:scale-90 transition-all duration-200 rounded-3xl text-center">
                     </form>
                 </td>
                 <td class="py-4 px-2">
