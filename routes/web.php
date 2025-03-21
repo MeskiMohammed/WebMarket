@@ -17,10 +17,10 @@ use App\Http\Controllers\UniteController;
 use App\Http\Controllers\ModeReglementController;
 use App\Http\Controllers\EtatController;
 
-Route::get('/',fn () => view('client.layout.app'));
+Route::get('/',fn () => view('client.Layout.app'));
 Route::get('/admin',fn () => view('admin.Layout.app'));
-Route::get('/login',fn () => view('login'));
-Route::get('/register',fn () => view('register'));
+#Route::get('/login',fn () => view('login'));
+#Route::get('/register',fn () => view('register'));
 Route::get('/cart',fn () => view('admin.store/cart'));
 
 Route::resource('users',UserController::class);
@@ -42,9 +42,7 @@ Route::get('/users/{user}/toggle-admin',[UserController::class,'toggleAdmin'])->
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+#Route::get('/', function () {return view('welcome');});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

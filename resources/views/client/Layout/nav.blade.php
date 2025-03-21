@@ -35,6 +35,13 @@
             </div>
 
             <div class="order-2 md:order-3 flex items-center" id="nav-content">
+                <a class="bg-gray-100 rounded py-2 px-4 mx-2" href="{{route('login')}}">
+                    login
+                </a>
+
+                <a class="bg-gray-100 rounded py-2 px-4 mx-2" href="{{route('register')}}">
+                    register
+                </a>
 
                 <a class="inline-block no-underline hover:text-black" href="#">
                     <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
