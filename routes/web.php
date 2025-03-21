@@ -16,9 +16,10 @@ use App\Http\Controllers\MarqueController;
 use App\Http\Controllers\UniteController;
 use App\Http\Controllers\ModeReglementController;
 use App\Http\Controllers\EtatController;
+use App\Http\Middleware\AdminMiddleware;
 
 
-Route::get('/admin',fn () => view('admin.Layout.app'));
+
 #Route::get('/login',fn () => view('login'));
 #Route::get('/register',fn () => view('register'));
 Route::get('/cart',fn () => view('admin.store/cart'));
@@ -54,5 +55,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::middleware(AdminMiddleware::class)->group(function(){
+    Route::get('/admin',fn () => view('admin.Layout.app'));
+});
+
 
 require __DIR__.'/auth.php';
