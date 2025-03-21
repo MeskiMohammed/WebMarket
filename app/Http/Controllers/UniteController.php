@@ -20,7 +20,7 @@ class UniteController extends Controller
      */
     public function create()
     {
-        return view('admin/unites.create');
+        return view('admin.unites.create');
     }
 
     /**
