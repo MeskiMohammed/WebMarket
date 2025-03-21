@@ -24,31 +24,11 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        $validated = $this->validate($request, [
-            'nom' => 'required|string',
-            'prenom' => 'required|string',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6|confirmed',
-            'tel' => 'required|string',
-            'ville' => 'required|string',
-            'adresse' => 'required|string',
-        ]);
-
-        $validated['password'] = bcrypt($validated['password']);
-        User::create($validated);
-        return redirect()->back();
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(User $user)
     {
-        //
+        
     }
 
     /**
