@@ -16,13 +16,16 @@ use App\Http\Controllers\MarqueController;
 use App\Http\Controllers\UniteController;
 use App\Http\Controllers\ModeReglementController;
 use App\Http\Controllers\EtatController;
+use App\Http\Controllers\StoreController;
 use App\Http\Middleware\AdminMiddleware;
 
 
 
 #Route::get('/login',fn () => view('login'));
 #Route::get('/register',fn () => view('register'));
-Route::get('/cart',fn () => view('admin.store/cart'));
+Route::get('/cart',fn () => view('admin.store.cart'));
+Route::get('/p',[StoreController::class,'get_products']);
+
 
 Route::resource('users',UserController::class);
 Route::resource('produits',ProduitController::class);

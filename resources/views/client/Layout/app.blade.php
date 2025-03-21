@@ -9,7 +9,7 @@
 
     @include("client.Layout.slides")
 
-    @include("client.Layout.section")
+    @yield("content")
 
     @include("client.Layout.footer")
 
